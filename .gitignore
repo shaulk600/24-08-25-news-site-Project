@@ -1,0 +1,6 @@
+document/
+
+vs/
+bin/
+
+.env
