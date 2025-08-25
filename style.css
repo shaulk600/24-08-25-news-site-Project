@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100 vw;
+    height: 100 vh;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+.w-50 {
+    width: 50%;
+}
+.home_page{
+    width: 30%;
+    
+    border:  1px solid black;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+
+}
+
+/* .new_element { */
+    /* <div id="root">
+        <div class="news_item">
+            <img class="info_image w-50" src="" alt="">
+            <div class="div_text w-50">
+                <div class="author">a</div>
+                <div class="title title_hover">a</div>
+            </div>
+        </div>
+    </div> */
+/* } */
+
+.news_item {
+    border:  1px solid black;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.info_image {
+    height: 100%;
+    border:  1px solid black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.div_text {
+    height: 100%;
+
+    border:  1px solid black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.author {}
+
+.title{
+    color: rgb(21, 21, 22);
+
+}
+.title_hover:hover {
+    color: rgb(55, 55, 190);
+}
