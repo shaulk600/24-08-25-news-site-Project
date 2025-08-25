@@ -4,3 +4,4 @@ vs/
 bin/
 
 .env
+env.js
