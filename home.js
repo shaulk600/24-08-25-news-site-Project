@@ -1,57 +1,7 @@
 import { apikey } from "./env.js";
 
-export async function getDataLocalStorage() {
 
-    let data = localStorage.getItem("news");
-    if (!data) {
-        data = await getData();
-        console.log(data);
-        localStorage.setItem("news", JSON.stringify(data));
-    }
-    const ret = JSON.parse(data);
-    return ret;
-}
-
-
-async function getData() {
-    try {
-        console.log(`1fgrfgrg`);
-        const url = `https://newsapi.org/v2/everything?q=tesla&from=2025-08-20&sortBy=publishedAt&apiKey=${apikey}`;
-        const res = await fetch(url, { method: 'GET' });
-        const data = await res.json();
-        return data;
-    } catch (err) {
-        console.log(err);
-    }
-}
-
-
-export async function createPageHome() {
-
-    const homePage = document.createElement('div');
-    homePage.classList.add('home_page');
-
-
-    const res = await getDataLocalStorage();
-    const data = res.articles;
-    if (!data) {
-        console.log('Errorrrrr data not enter');
-    }
-    for (let i = 0; i < data.length; i++) {
-
-        try {
-            let element = await createElementNewsHome(data[i]);
-            homePage.appendChild(element);
-        } catch (err) {
-            console.log(`error - createPageHome- ${err}`);
-        }
-    }
-
-    const root = document.getElementById("root");
-    root.appendChild(homePage);
-}
-
-async function createElementNewsHome(objData) {
+export async function createElementNewsHome(objData) {
 
     const urlImgValue = objData.urlToImage;
     console.log(urlImgValue);

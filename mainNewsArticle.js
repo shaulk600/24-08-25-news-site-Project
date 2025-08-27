@@ -1,8 +1,6 @@
 
 
-function newsArticle(objData) {
-
-
+export function newsArticle(objData) {
 
     const urlImgValue = objData.urlToImage;
     console.log(urlImgValue);
@@ -49,4 +47,3 @@ function newsArticle(objData) {
 
 }
 
-newsArticle()
