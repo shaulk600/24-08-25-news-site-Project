@@ -1,5 +1,6 @@
 import { apikey } from "./env.js";
 import { createElementNewsHome } from "./home.js";
+import { newsArticle } from "./mainNewsArticle.js";
 
 // שונות
 export async function getDataLocalStorage() {
@@ -55,11 +56,24 @@ export async function createPageHome() {
     root.appendChild(homePage);
 
     // flow plen b - enter spesific news
-    root.addEventListener("click" ,(event)=>{
-        const target = event.target;
+    root.addEventListener("click", (event) => {
+        // הוא תופס את האלמנט שעוטף את הכל הקרוב ביותר אלינו - במקרה הזה articleItem
+        const articleItem = event.target.closest("news_item");
+        //  נשלוף מידע מה
+        // data attributes
+        const titleValue = articleItem.divText.title.value; // האם ה value נצרך פה - לכאורה כדי לשלוףת את ה contant צריך value
 
-        
-    })
+        // חיפוש בדאטה
+
+        for (let i = 0; i < data.length; i++) {
+            const dataTitleValue = data.title;
+            if (dataTitleValue === titleValue) {
+                // צריך לפני זה לנקות את המסך הנוכחי --!!!! חשוב
+                newsArticle(data[i]);
+            }
+        });
+
+})
 }
 
 // להקפיד על שמות משתנים
