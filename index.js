@@ -71,7 +71,7 @@ export async function createPageHome() {
                 // צריך לפני זה לנקות את המסך הנוכחי --!!!! חשוב
                 newsArticle(data[i]);
             }
-        });
+        }
 
 })
 }
